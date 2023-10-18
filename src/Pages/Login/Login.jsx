@@ -1,37 +1,57 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import loginIMG from '../../../public/svg/undraw_mobile_content_xvgr.png'
 import googleicon from '../../../public/icons/google-logo-9808.png'
-import { Link } from 'react-router-dom';
+import { Link,  useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import toast, { Toaster } from 'react-hot-toast';
 const Login = () => {
-        const  {Login} = useContext(AuthContext)
+  const location = useLocation()
+  const navigate = useNavigate()
+  const [success , Setsuccess] = useState(null)
+  const [error , Seterror] = useState(null)
+        const  {Login , googlelogin} = useContext(AuthContext)
   const handleloginuser = e =>{
     e.preventDefault()
     const form = new FormData(e.currentTarget)
     const email = form.get('email')
     const password = form.get('password')
     console.log(email , password)
-
+   Setsuccess(null)
+   Seterror(null)
     // login with firebase
       Login(email , password)
       .then((userCredential) => {
        
         const LoginUser = userCredential.user;
         console.log(LoginUser)
+        Setsuccess('Login Successful')
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode , errorMessage)
+        Seterror(errorCode)
       });
-      form.reset()
+   // navigate
+   navigate(location?.state ? location?.state : '/')
+      
 
   }
+  const handleGoogle = () =>{
+    googlelogin()
+  .then(result => console.log(result.user))
+  .catch(error =>{console.log(error.message)})
+}
 
     return (
        <>
        <div>
+       <Toaster position="top-center"  reverseOrder={false}/>
+           {error && toast.error(error)}
+
+           
+           {success && toast.success(success)}
        <div className="hero  bg-white">
   <div className="hero-content flex-col lg:flex-row">
         <img src={loginIMG} alt="" />
@@ -56,7 +76,7 @@ const Login = () => {
           <button type='submit' className="bg-black text-white text-xl font-medium rounded-full px-6 py-2">Login</button>
         </div>
 
-        <div className='border-2 border-black mt-3  flex justify-center p-2 rounded-xl'>
+        <div onClick={handleGoogle} className='border-2 border-black mt-3  flex justify-center p-2 rounded-xl'>
           <span className='flex justify-center items-center gap-5'><img className='w-10' src={googleicon} alt="" />
           <p className='font-medium text-xl'>Login With Google</p></span>
         </div>

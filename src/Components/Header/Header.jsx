@@ -26,6 +26,12 @@ const Header = () => {
     isPending ? "pending" : isActive ? "bg-black text-white rounded-md" : ""}>
   <li className='text-2xl font-medium'><a>My Cart</a></li>
 </NavLink>
+    <NavLink
+  to="/registration"
+  className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "bg-black text-white rounded-md" : ""}>
+  <li className='text-2xl font-medium'><a>Register</a></li>
+</NavLink>
 
 
     </>
@@ -60,11 +66,11 @@ const Header = () => {
 
         {
           user ? <>
-           <span className='flex justify-center items-center gap-1 md:gap-6'>
+           <span className='flex justify-center items-center gap-2 md:gap-6'>
            
            
-           <img className='w-14 h-14 rounded-full' src={user.photoURL} alt="" />
-            <p className='mr-1 md:mr-10'>{user.displayName}</p>
+           <img className='w-10 md:w-12 h-10 md:h-12 rounded-full -ml-5' src={user.photoURL} alt="" />
+            <p className='mr-3 ml-3 text-lg font-medium'>{user.displayName}</p>
            </span>
          
           <button onClick={handlelogout} className=" font-medium text-lg md:text-2xl text-white bg-slate-950 px-3 md:px-6 py-1 md:py-2  rounded-lg ">Logout</button>
