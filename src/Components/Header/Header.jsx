@@ -1,33 +1,41 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../public/logo/Screenshot 2023-10-17 232850.png'
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Header = () => {
+
+  const {user , Logout} = useContext(AuthContext)
     const links = <>
     
     <NavLink
   to="/"
   className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "active" : ""}>
+    isPending ? "pending" : isActive ? "bg-black text-white rounded-md" : ""}>
   <li className='text-2xl font-medium'><a>Home</a></li>
 </NavLink>
     <NavLink
   to="/addproduct"
   className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "active" : ""}>
+    isPending ? "pending" : isActive ? "bg-black text-white rounded-md" : ""}>
   <li className='text-2xl font-medium'><a>Add  Product</a></li>
 </NavLink>
     <NavLink
   to="/cart"
   className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "active" : ""}>
+    isPending ? "pending" : isActive ? "bg-black text-white rounded-md" : ""}>
   <li className='text-2xl font-medium'><a>My Cart</a></li>
 </NavLink>
 
 
     </>
+
+    const handlelogout = () =>{
+      Logout()
+      .then()
+    }
     return (
-        <div className='p-3'>
+        <div className='p-0 md:p-4'>
                 <div className="navbar bg-base-100">
   <div className="navbar-start">
     <div className="dropdown">
@@ -39,7 +47,7 @@ const Header = () => {
       </ul>
     </div>
     <div>
-        <img className='w-52' src={logo} alt="" />
+        <img className='w-24 md:w-52 ' src={logo} alt="" />
 
     </div>
   </div>
@@ -49,7 +57,23 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <button className=" font-medium text-lg md:text-2xl text-white bg-slate-950 px-3 md:px-6 py-1 md:py-2  rounded-lg ">Login</button>
+
+        {
+          user ? <>
+           <span className='flex justify-center items-center gap-1 md:gap-6'>
+           
+           
+           <img className='w-14 h-14 rounded-full' src={user.photoURL} alt="" />
+            <p className='mr-1 md:mr-10'>{user.displayName}</p>
+           </span>
+         
+          <button onClick={handlelogout} className=" font-medium text-lg md:text-2xl text-white bg-slate-950 px-3 md:px-6 py-1 md:py-2  rounded-lg ">Logout</button>
+          </>
+          :
+          <Link to="/login">  <button className=" font-medium text-lg md:text-2xl text-white bg-slate-950 px-3 md:px-6 py-1 md:py-2  rounded-lg ">Login</button></Link>
+        }
+
+  
   </div>
 </div>
         </div>
