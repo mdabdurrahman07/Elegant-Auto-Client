@@ -1,6 +1,8 @@
-import React from 'react';
 
+import React, { useRef } from 'react';
+import Swal from 'sweetalert2'
 const AddProduct = () => {
+  const formRef = useRef(null)
     const handleaddproduct = e =>{
         e.preventDefault()
 
@@ -17,6 +19,30 @@ const AddProduct = () => {
         const cardetails = {name , brandname , type , price , description , rating , photo}
 
         console.log(cardetails)
+
+        fetch('http://localhost:5000/brands', {
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(cardetails)
+
+        })
+        .then(res=> res.json())
+        .then(data => {
+          console.log(data)
+          if(data.acknowledged == true){
+            Swal.fire({
+              icon: 'success',
+              title: 'Thanks ',
+              text: 'Your Data Added Successfully',
+            
+            })
+            formRef.current.reset()
+            
+          }
+        })
         
     }
     return (
@@ -26,7 +52,7 @@ const AddProduct = () => {
             <div className="hero ">
     
     <div className="card flex-shrink-0 w-full max-w-lg drop-shadow-lg bg-base-100">
-      <form onSubmit={handleaddproduct} className="card-body">
+      <form ref={formRef} onSubmit={handleaddproduct} className="card-body">
         <div className="form-control">
           <label className="label">
             <span className="text-xl font-medium">Name</span>
