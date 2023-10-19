@@ -1,0 +1,21 @@
+[
+    {
+        "id": 1,
+        "title": "Repair & Service",
+        "img": "https://repairsmith-prod-wordpress.s3.amazonaws.com/2022/09/car-repair.jpg",
+        "description": "Car repair and service encompasses essential maintenance and repairs for vehicles, ensuring their optimal performance, safety, and longevity. Technicians diagnose and fix issues, maintaining road worthiness."
+    },
+    {
+        "id": 2,
+        "title": "Car genuine parts",
+        "img": "https://scene7.toyota.eu/is/image/toyotaeurope/toyota-parts-new-1920x1080?wid=1280&fit=fit,1&ts=0&resMode=sharp2&op_usm=1.75,0.3,2,0",
+        "description": "Car genuine parts are authentic components made by the manufacturer. They ensure optimal performance, safety, and longevity, preserving the vehicle's value and warranty compliance."
+    },
+    {
+        "id": 3,
+        "title": "Head Lights",
+        "img": "https://www.autodeal.com.ph/custom/blog-post/header/different-types-of-headlights-60d2c9ea0a75f.jpg",
+        "description": "Car bulbs or LED lights illuminate the road, enhancing visibility and safety while driving. They consume less energy and last longer than traditional bulbs."
+    }
+    
+]
