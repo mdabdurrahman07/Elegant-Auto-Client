@@ -17,12 +17,14 @@ import BMW from '../BMW/BMW';
 import Ford from '../Ford/Ford';
 import Honda from '../Honda/Honda';
 import CarDetails from '../Components/CarDetails/CarDetails';
+import ErrorPage from '../ErrorPage/ErrorPage';
 
 
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
+      errorElement: <ErrorPage></ErrorPage>,
      children : [
         {path: '/',
         element: <Home></Home>
