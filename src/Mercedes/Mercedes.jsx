@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { Swiper , SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination , Autoplay } from 'swiper/modules';
 import 'swiper/css/pagination';
@@ -53,7 +53,7 @@ className="mySwiper"
               <p className='font-medium text-xl'>Price <span className='font-bold ml-2'>{mercedescars.price} BDT</span></p>
               <p  className='font-medium text-xl'>Rating  <span className='font-bold ml-2 mr-2'>{mercedescars.rating}</span> Out of 10</p>
               <div className="flex justify-center items-center gap-3 p-3">
-                <button className="px-5 py-2 bg-black text-white font-bold text-xl rounded-xl">Details </button>
+              <Link to={`/CarDetails/${mercedescars._id}`}>  <button className="px-5 py-2 bg-black text-white font-bold text-xl rounded-xl">Details </button></Link>
                 <button className="px-5 py-2 bg-black text-white font-bold text-xl rounded-xl">Update </button>
               </div>
             </div>

@@ -16,6 +16,7 @@ import Mercedes from '../Mercedes/Mercedes';
 import BMW from '../BMW/BMW';
 import Ford from '../Ford/Ford';
 import Honda from '../Honda/Honda';
+import CarDetails from '../Components/CarDetails/CarDetails';
 
 
   const router = createBrowserRouter([
@@ -80,6 +81,12 @@ import Honda from '../Honda/Honda';
       loader : ()=> fetch('http://localhost:5000/brands/honda'),
 
     },
+    {
+      path: '/CarDetails/:id',
+      element : <CarDetails></CarDetails>,
+      loader : ()=> fetch('http://localhost:5000/brands')
+      
+    }
 
 
   
