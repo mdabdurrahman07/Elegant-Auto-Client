@@ -18,6 +18,7 @@ import Ford from '../Ford/Ford';
 import Honda from '../Honda/Honda';
 import CarDetails from '../Components/CarDetails/CarDetails';
 import ErrorPage from '../ErrorPage/ErrorPage';
+import UpdateInfo from '../Pages/UpdateInfo/UpdateInfo';
 
 
   const router = createBrowserRouter([
@@ -91,6 +92,12 @@ import ErrorPage from '../ErrorPage/ErrorPage';
       loader : ()=> fetch('http://localhost:5000/brands')
       
     },
+    {
+      path: '/updatedInfo/:id',
+      element : <UpdateInfo></UpdateInfo>,
+      loader : ()=> fetch('http://localhost:5000/brands')
+
+    }
     
 
 

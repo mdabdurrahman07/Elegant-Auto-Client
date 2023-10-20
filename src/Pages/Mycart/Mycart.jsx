@@ -48,7 +48,7 @@ const Mycart = () => {
     }
     return (
         <div className='max-w-6xl mx-auto'>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto mb-96">
   <table className="table">
     {/* head */}
     <thead className='bg-black'>

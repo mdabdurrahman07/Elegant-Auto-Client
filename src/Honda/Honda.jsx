@@ -54,7 +54,7 @@ className="mySwiper"
               <p  className='font-medium text-xl'>Rating  <span className='font-bold ml-2 mr-2'>{hondacars.rating}</span> Out of 10</p>
               <div className="flex justify-center items-center gap-3 p-3">
              <Link  to={`/CarDetails/${hondacars._id}`}>   <button className="px-5 py-2 bg-black text-white font-bold text-xl rounded-xl">Details </button></Link>
-                <button className="px-5 py-2 bg-black text-white font-bold text-xl rounded-xl">Update </button>
+               <Link to={`/updatedInfo/${hondacars._id}`}> <button className="px-5 py-2 bg-black text-white font-bold text-xl rounded-xl">Update </button></Link>
               </div>
             </div>
           </div>)
