@@ -33,7 +33,9 @@ import ErrorPage from '../ErrorPage/ErrorPage';
     element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>
     },
     {path: '/cart',
-    element: <PrivateRoute><Mycart></Mycart></PrivateRoute>
+    element: <PrivateRoute><Mycart></Mycart></PrivateRoute>,
+    loader : () => fetch('http://localhost:5000/cartData')
+
     },
     {path: '/login',
     element: <Login></Login>
@@ -85,10 +87,11 @@ import ErrorPage from '../ErrorPage/ErrorPage';
     },
     {
       path: '/CarDetails/:id',
-      element : <CarDetails></CarDetails>,
+      element : <PrivateRoute><CarDetails></CarDetails></PrivateRoute>,
       loader : ()=> fetch('http://localhost:5000/brands')
       
-    }
+    },
+    
 
 
   
