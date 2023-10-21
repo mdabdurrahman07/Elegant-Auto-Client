@@ -17,7 +17,7 @@ const CarDetails = () => {
 
     const handleCartBtn = () =>{
 
-        fetch('https://local-car-server-eraw8l33h-md-abdur-rahmans-projects-58537ada.vercel.app/cartData' , {
+        fetch('https://local-car-server-ofk75cphr-md-abdur-rahmans-projects-58537ada.vercel.app/cartData' , {
             method : "POST",
             headers : {
                 "content-type" : "application/json"

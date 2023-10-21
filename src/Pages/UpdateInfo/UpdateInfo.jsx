@@ -35,7 +35,7 @@ const UpdateInfo = () => {
 
         console.log(UpdatedCarDetails)
         
-        fetch(`https://local-car-server-eraw8l33h-md-abdur-rahmans-projects-58537ada.vercel.app/brands/${UpdateCar._id}` , {
+        fetch(`https://local-car-server-ofk75cphr-md-abdur-rahmans-projects-58537ada.vercel.app/brands/${UpdateCar._id}` , {
             method : "PUT",
             headers : {
                 "content-type" : "application/json"
