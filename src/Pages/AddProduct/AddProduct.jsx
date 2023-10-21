@@ -20,7 +20,7 @@ const AddProduct = () => {
 
         console.log(cardetails)
 
-        fetch('https://local-car-server-yq2f3uwx1-md-abdur-rahmans-projects-58537ada.vercel.app/brands', {
+        fetch('https://local-car-server-eraw8l33h-md-abdur-rahmans-projects-58537ada.vercel.app/brands', {
           method: "POST",
 
           headers: {

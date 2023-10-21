@@ -35,7 +35,7 @@ import UpdateInfo from '../Pages/UpdateInfo/UpdateInfo';
     },
     {path: '/cart',
     element: <PrivateRoute><Mycart></Mycart></PrivateRoute>,
-    loader : () => fetch('https://local-car-server-yq2f3uwx1-md-abdur-rahmans-projects-58537ada.vercel.app/cartData')
+    loader : () => fetch('https://local-car-server-eraw8l33h-md-abdur-rahmans-projects-58537ada.vercel.app/cartData')
 
     },
     {path: '/login',
@@ -53,49 +53,49 @@ import UpdateInfo from '../Pages/UpdateInfo/UpdateInfo';
     {
       path: '/brands/Audi',
       element: <Audi></Audi>,
-      loader : ()=> fetch('https://local-car-server-yq2f3uwx1-md-abdur-rahmans-projects-58537ada.vercel.app/brands/audi'),
+      loader : ()=> fetch('https://local-car-server-eraw8l33h-md-abdur-rahmans-projects-58537ada.vercel.app/brands/audi'),
 
     },
     {
       path: '/brands/Toyota',
       element: <Toyota></Toyota>,
-      loader : ()=> fetch('https://local-car-server-yq2f3uwx1-md-abdur-rahmans-projects-58537ada.vercel.app/brands/toyota'),
+      loader : ()=> fetch('https://local-car-server-eraw8l33h-md-abdur-rahmans-projects-58537ada.vercel.app/brands/toyota'),
 
     },
     {
       path: '/brands/Mercedes',
       element: <Mercedes></Mercedes>,
-      loader : ()=> fetch('https://local-car-server-yq2f3uwx1-md-abdur-rahmans-projects-58537ada.vercel.app/brands/mercedes'),
+      loader : ()=> fetch('https://local-car-server-eraw8l33h-md-abdur-rahmans-projects-58537ada.vercel.app/brands/mercedes'),
 
     },
     {
       path: '/brands/BMW',
       element: <BMW></BMW>,
-      loader : ()=> fetch('https://local-car-server-yq2f3uwx1-md-abdur-rahmans-projects-58537ada.vercel.app/brands/bmw'),
+      loader : ()=> fetch('https://local-car-server-eraw8l33h-md-abdur-rahmans-projects-58537ada.vercel.app/brands/bmw'),
 
     },
     {
       path: '/brands/Ford',
       element: <Ford></Ford>,
-      loader : ()=> fetch('https://local-car-server-yq2f3uwx1-md-abdur-rahmans-projects-58537ada.vercel.app/brands/ford'),
+      loader : ()=> fetch('https://local-car-server-eraw8l33h-md-abdur-rahmans-projects-58537ada.vercel.app/brands/ford'),
 
     },
     {
       path: '/brands/Honda',
       element: <Honda></Honda>,
-      loader : ()=> fetch('https://local-car-server-yq2f3uwx1-md-abdur-rahmans-projects-58537ada.vercel.app/brands/honda'),
+      loader : ()=> fetch('https://local-car-server-eraw8l33h-md-abdur-rahmans-projects-58537ada.vercel.app/brands/honda'),
 
     },
     {
       path: '/CarDetails/:id',
       element : <PrivateRoute><CarDetails></CarDetails></PrivateRoute>,
-      loader : ()=> fetch('https://local-car-server-yq2f3uwx1-md-abdur-rahmans-projects-58537ada.vercel.app/brands')
+      loader : ()=> fetch('https://local-car-server-eraw8l33h-md-abdur-rahmans-projects-58537ada.vercel.app/brands')
       
     },
     {
       path: '/updatedInfo/:id',
       element : <PrivateRoute><UpdateInfo></UpdateInfo></PrivateRoute>,
-      loader : ()=> fetch('https://local-car-server-yq2f3uwx1-md-abdur-rahmans-projects-58537ada.vercel.app/brands')
+      loader : ()=> fetch('https://local-car-server-eraw8l33h-md-abdur-rahmans-projects-58537ada.vercel.app/brands')
 
     }
     

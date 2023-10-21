@@ -15,7 +15,7 @@ const Mycart = () => {
    
     const handledelete = (_id) => {
         console.log(_id)
-        fetch(`https://local-car-server-yq2f3uwx1-md-abdur-rahmans-projects-58537ada.vercel.app/cartData/${_id}` , {
+        fetch(`https://local-car-server-eraw8l33h-md-abdur-rahmans-projects-58537ada.vercel.app/cartData/${_id}` , {
             method : "DELETE",
         })
         .then(res => res.json())
