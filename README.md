@@ -14,7 +14,15 @@ This is a MERN project (Mongodb , Express , React , Nodejs), In  this project  I
  - CRUD Method
  - Dynamics Routes
  
-
+## Dependencies
+- Firebase config 
+- npm/yarn
+- Mongodb uri 
+## Technology 
+- React
+- Node js
+- Mongodb
+- Express
 ## Links
 
 Live link of the Website :  [elegant-auto.web.app](https://elegant-auto.web.app/)
